@@ -1,0 +1,3 @@
+Redundansi atau kerangkapan adalah situasi terjadinya duplikasi data yang tidak diperlukan dan berakibat kepada kinerja aplikasi. Hal ini bisa menyebabkan pemborosan ruang penyimpanan dan tidak konsistennya data. Dimana *redundancy* ini terjadi jika:
+1. Data yang sama disimpan lebih dari sekali, contohnya seperti![[Pasted image 20250805142902.png]]Nama dan NIM yang sama terdaftar pada 2 tabel yang berbeda
+2. Data yang simpan sebenarnya didapat dari data lain ![[Pasted image 20250805143607.png]]Data pada kolom 'JmlHarga' didapat dari perkalian antara data pada kolom 'HargaSatuan' dengan 'Jumlah'.
