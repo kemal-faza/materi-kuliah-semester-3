@@ -14,7 +14,7 @@ Setelah mengenai mengenai tipe, ada beberapa jenis tipe data, yaitu:
 2. **Tipe data koletif**, yang bisa berisi banyak nilai sekaligus, seperti `array`.
 3. **Tipe data komposit**, yaitu tipe data yang kita bentuk sendiri berdasarkan jenis tipe data lainnya, contohnya `titik`, `jam`, dan `date`.
 ```pseudocode
-// Tipe data titik
+{ Tipe data titik }
 type Titik : < x : integer {absis},
 			   y : integer {ordinat} >
 ```
@@ -92,3 +92,31 @@ function F (T: Titik) -> integer
 Terdapat sebuah program utama yang digunakan untuk mengetes ADT, program ini dinamakan ***driver***, tujuannya adalah memastikan bahwa setiap komponen dari ADT itu berjalan dengan semestinya sebelum diimplementasikan pada aplikasi yang lebih kompleks. Driver ini akan memanggil setiap primitif (fungsi dan prosedur) yang telah dibuat dan mengujinya dengan beberapa kemungkinan parameter.
 
 Jika diibaratkan, pengetesan ini memiliki hubungan sebagai *supplier* dan *client*. Yang mana ADT sebagai *supplier* akan menyediakan tipe data dan primitif untuk diuji coba. Sedangkan *driver* sebagai *client* akan menguji coba tipe data dan primitif yang dimiliki oleh ADT tersebut.
+
+## Perbedaan Paradigma Fungsional dan Prosedural
+
+![[Screenshot 2025-08-27 203550.png]]
+
+Berdasarkan gambar ini, paradigma fungsional umumnya memiliki struktur ADT sederhana seperti header, defspek (definisi dan spesifikasi), realisasi, dan aplikasi yang sudah mencakup tipe data dan program utamanya. Akan tetapi, pada paradigma prosedural, tipe data dan program utama itu dipisahkan menjadi ADT yang berbeda. Hal ini diperlukan agar ADT bisa menjadi komponen yang dapat digunakan kembali.
+
+## Enkapsulasi pada ADT
+
+![[Screenshot 2025-08-27 203607.png]]
+
+Pada gambar ini, tipe data A dan B bisa langsung digunakan pada program utama, tanpa perlu mengetahui detail bagaimana tipe data tersebut diimplementasikan karena mereka merupakan ADT yang sudah siap pakai. Berikut ini contohnya.
+
+![[Screenshot 2025-08-27 203616.png]]
+
+## Jenis ADT
+Berdasarkan cara menstrukturkan data, ADT terbagi menjadi tiga, yaitu:
+1. Unit tunggal, yaitu suatu variabel yang memiliki komponen penyusun bertipe data tunggal, contohnya `titik` yang penyusunnya berupa `x` dan `y` yang bertipe `integer`.
+2. Unit kolektif, yaitu suatu variabel yang komponen penyusunnya bertipe data kolektif, seperti `table` atau `matrix` yang penyusunnya bisa berupa `array`.
+3. Unit koleksi berkait, yaitu suatu variabel yang komponennya saling terhubung satu sama lain, seperti `linked-list` atau `tree`.
+
+Untuk implementasi ADT pada bahasa C, terdapat pengelompokkan berdasarkan strukturnya, yaitu:
+
+| ADT                                        | Bahasa C                         |
+| ------------------------------------------ | -------------------------------- |
+| Definisi dan Spesifikasi Tipe dan Primitif | File header modul berekstensi .h |
+| Body/Realisasi Primitif                    | File kode modul berekstensi .c   |
+| Program Utama/Driver                       | File kode utama berekstensi .c   |
